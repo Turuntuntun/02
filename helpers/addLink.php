@@ -1,7 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Юра
- * Date: 26.09.2019
- * Time: 2:58
- */
+$link = $_POST['link'];
+$id = $_POST['id'];
+$str = 'qwertyuiopasdfghjklzxcvbnm1234567890';
+$length = rand(3,5);
+$minLink = '';
+for( $i = 0; $i < $length; $i++){
+    $minLink .= $str[rand(0,strlen($str) - 1)];
+}
+$minLink .= '.tk';
+$result = json_decode(file_get_contents('../results/result.txt'),true);
+$result[$id]['LINKS'][$minLink]['FULL_LINK'] = $link;
+$result[$id]['LINKS'][$minLink]['COUNT'] = 0;
+
+file_put_contents('../results/result.txt',json_encode($result));
