@@ -4,7 +4,6 @@
     <title>Укорачиватель ссылок на файлах</title>
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <link rel="stylesheet" href = '/layouts/style.css?1'>
-    <script src ='/layouts/script.js'></script>
 </head>
 <body>
     <form>
@@ -34,7 +33,7 @@
 
         $('.submit').on('click',function () {
             let linkVal = $('.link').val();
-            let validate = /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
+            let validate = /^(ftp|http|https):\/\/[^ "]+$/i;
             if (validate.test(linkVal)) {
                 $.ajax({
                     type: "POST",
@@ -46,7 +45,6 @@
                 });
             } else {
                 $('.result').html('<p>Некоректная ссылка, напишите корректную ссылку</p>');
-                console.log();
             }
 
         });

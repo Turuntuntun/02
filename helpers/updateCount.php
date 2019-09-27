@@ -13,6 +13,4 @@ foreach ($result as $key => $value) {
 }
 
 file_put_contents('../results/result.txt',json_encode($result));
-ob_start();
 header('Location: '.$fullLink);
-ob_end_flush();

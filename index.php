@@ -9,7 +9,7 @@ if ($_COOKIE['ID']) {
         $id = 1;
 
     } else {
-        $id = count($info);
+        $id = count($info) + 1;
     };
     $info[$id] = [];
     file_put_contents('results/result.txt',json_encode($info));
