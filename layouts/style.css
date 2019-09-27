@@ -1,0 +1,23 @@
+input,div{
+    display: block;
+    border-radius: 3px;
+    outline: none;
+    width: 180px;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-style: italic;
+}
+input{
+    border: 1px solid gray;
+}
+input:hover{
+    box-shadow: 0 0 9px rgba(49, 49, 49, 0.5);
+}
+div{
+    width: 500px;
+}
+table,div{
+    text-align: center;
+}
